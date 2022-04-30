@@ -1,18 +1,22 @@
-# Proyecto conversor de moneda basico de COP A USD o viceversa
+# Proyecto conversor de moneda basico de Pesos Colombianos
 
-print("")
-print("Bienvenido al primer conversor de moneda oficial de lucarova7")
-print("")
-print("Opcion [1]: Pesos colombianos a Dolares COP-USD ")
-print("")
-print("Opcion [2]: Dolares a Pesos Colombianos USD-COP ")
+Menu = """
+Bienvenido al primer conversor de moneda oficial de lucarova7
 
-# Valor del dolar tomado el dia 29 de Abril de 2022
+Opcion [1]: Pesos colombianos a Dolares COP-USD
+Opcion [2]: Dolares a Pesos Colombianos USD-COP
+Opcion [3]: Pesos Colombianos a Euros COP-€
+Opcion [4]: Euros a Pesos Colombianos €-COP
+
+Elige el numero de la opcion que deseas: 
+"""
+
+# Valores tomados el dia 29 de Abril de 2022
 
 Valor_Dolar = float(3956)
+Valor_Euro = float(4174)
 
-print("")
-Opcion = input("Elige el numero de la opcion que deseas: ")
+Opcion = input(Menu)
 
 #Pesos Colombianos a Dolares USD
 
@@ -26,7 +30,7 @@ if Opcion == "1":
     print("")
     print("$" + Pesos + " COP Equivalen a $" + USD + " Dolares")
 
-# Dolares a Pesos Colombianos
+# Dolares a Pesos Colombianos COP
 
 elif Opcion == "2":
     print("")
@@ -38,10 +42,34 @@ elif Opcion == "2":
     print("")
     print("$" + Dolares + " USD Equivalen a $" + COP + " Pesos Colombianos")
 
+#Pesos Colombianos a Euros €
+
+elif Opcion == "3":
+    print("")
+    Pesos = float(input("Ingrese la cantidad de pesos colombianos que desea convertir: "))
+    Euros = round(Pesos / Valor_Euro, 2)
+    Pesos = round(Pesos, 2)
+    Pesos = str(Pesos)
+    Euros = str(Euros)
+    print("")
+    print("$" + Pesos + " COP Equivalen a $" + Euros + " Euros")
+
+#Euros a pesos Colombianos COP
+
+elif Opcion == "4":
+    print("")
+    Euros = float(input("Ingrese la cantidad de euros que desea convertir: "))
+    Pesos_COP = round(Euros * Valor_Euro, 2)
+    Euros = round(Euros, 2)
+    Euros = str(Euros)
+    Pesos_COP = str(Pesos_COP)
+    print("")
+    print("$" + Euros + " € Equivalen a $" + Pesos_COP + " Pesos Colombianos")
+
 else:
     print("")
     print("Start Again Danny")
 
-# Fin primera version
+# Segunda version
 
 
